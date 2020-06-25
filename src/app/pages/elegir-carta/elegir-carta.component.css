@@ -1,0 +1,19 @@
+#diseño-cuadricula {
+  border:solid #000000 2px;
+  padding: 20px 20px 20px 20px;
+  background-color: aliceblue;
+
+}
+
+
+
+.testimonial-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+
+
+

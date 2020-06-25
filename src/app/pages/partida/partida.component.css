@@ -1,0 +1,19 @@
+#diseño-cuadricula {
+  border:solid #000000 2px;
+  padding: 0px;
+  background-color: aliceblue;
+}
+
+#diseño-cuadricula-juego {
+  position:absolute;
+  height:400px;
+  width:300px;
+  z-index: -1;
+}
+
+.frijol{
+  position:absolute;
+  top: 70px;
+  left : 90px;
+  z-index: 1;
+}

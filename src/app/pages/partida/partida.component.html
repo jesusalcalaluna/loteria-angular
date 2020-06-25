@@ -1,0 +1,40 @@
+
+
+<div class="container">
+  <h4>Estas en una partida</h4>
+
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-3 text-center" *ngFor="let carta of cartas; let i = index;" id="diseño-cuadricula">
+          <button (click)="clickBoton(cartas.id)">
+            <img  style="width: 20%" src="./assets/img/frijol.png" class="frijol" id="{{i}}">
+          </button>
+            <img style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="col-4 text-center ">
+      <h5>La carta es:</h5>
+      <img style="width: 50%;" src="./assets/img/cartas/1.jpg">
+
+      <div class="row mt-5">
+        <div class="col-12 mt-1">
+          <button type="button" class="btn btn-primary btn-block">Linea vertical</button>
+        </div>
+        <div class="col-12 mt-1">
+          <button type="button" class="btn btn-primary btn-block">Linea horizontal</button>
+        </div>
+        <div class="col-12 mt-1">
+          <button type="button" class="btn btn-primary btn-block">Centro</button>
+        </div>
+        <div class="col-12 mt-1">
+          <button type="button" class="btn btn-primary btn-block">Llena</button>
+        </div>
+        <div class="col-12 mt-1">
+          <button type="button" class="btn btn-primary btn-block">Llena</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
