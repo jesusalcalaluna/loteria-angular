@@ -1,38 +1,54 @@
-
-
 <div class="container">
   <h4>Estas en una partida</h4>
 
   <div class="row">
-    <div class="col-8">
+    <div class="col-7">
       <div class="row">
-        <div class="col-3 text-center" *ngFor="let carta of cartas; let i = index;" id="diseño-cuadricula">
-          <button (click)="clickBoton(cartas.id)">
-            <img  style="width: 20%" src="./assets/img/frijol.png" class="frijol" id="{{i}}">
-          </button>
-            <img style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+        <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
+
+
+          <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+          <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+
         </div>
       </div>
     </div>
-    <div class="col-4 text-center ">
-      <h5>La carta es:</h5>
-      <img style="width: 50%;" src="./assets/img/cartas/1.jpg">
+    <div class="col-5 text-center ">
+      <div class="row">
+        <div class="col-6">
+          <h5>La carta es:</h5>
+          <img style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
 
-      <div class="row mt-5">
-        <div class="col-12 mt-1">
-          <button type="button" class="btn btn-primary btn-block">Linea vertical</button>
+          <div class="row mt-5">
+            <div class="col-12 mt-1">
+              <button (click)="loteria()" type="button" class="btn btn-danger btn-block">Loteria</button>
+            </div>
+            <div class="col-12 mt-1">
+              <button (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+            </div>
+            <div class="col-12 mt-1">
+              <button (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-12 mt-1">
+              <button (click)="detener()" type="button" class="btn btn-secondary btn-block">Detener</button>
+            </div>
+            <div class="col-12 mt-1">
+              <button (click)="seguir()" type="button" class="btn btn-secondary btn-block">Empezar</button>
+            </div>
+          </div>
         </div>
-        <div class="col-12 mt-1">
-          <button type="button" class="btn btn-primary btn-block">Linea horizontal</button>
-        </div>
-        <div class="col-12 mt-1">
-          <button type="button" class="btn btn-primary btn-block">Centro</button>
-        </div>
-        <div class="col-12 mt-1">
-          <button type="button" class="btn btn-primary btn-block">Llena</button>
-        </div>
-        <div class="col-12 mt-1">
-          <button type="button" class="btn btn-primary btn-block">Llena</button>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12">
+              <h2> Jugadores en linea: </h2>
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let player of playerstotal">{{player}}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

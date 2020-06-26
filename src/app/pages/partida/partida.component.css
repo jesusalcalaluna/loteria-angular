@@ -12,8 +12,8 @@
 }
 
 .frijol{
+  width: 50%;
   position:absolute;
-  top: 70px;
-  left : 90px;
+  right: 50px;
   z-index: 1;
 }

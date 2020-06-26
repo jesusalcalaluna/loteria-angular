@@ -13,6 +13,9 @@ import { ElegirCartaComponent } from './pages/elegir-carta/elegir-carta.componen
 //modulos de drag and drop
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { PartidaComponent } from './pages/partida/partida.component';
+import {FormsModule} from "@angular/forms";
+import {socketLoteriaService} from "./services/socketLoteria.service";
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -26,13 +29,17 @@ import { PartidaComponent } from './pages/partida/partida.component';
     CrearSalaComponent,
     ElegirCartaComponent,
     PartidaComponent,
+    LoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DragDropModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        DragDropModule,
+        FormsModule
+    ],
+  providers: [
+    socketLoteriaService
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

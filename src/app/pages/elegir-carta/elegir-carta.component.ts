@@ -21,7 +21,7 @@ export class ElegirCartaComponent implements OnInit {
       this.cartasnum.push(i)
     }
 
-    console.log(this.cartasnum);
+
 
   }
 
@@ -119,6 +119,7 @@ export class ElegirCartaComponent implements OnInit {
     this.espacionueve = [];
     this.espaciodiez = [];
     this.espacioonce = [];
+    this.espaciodoce = [];
     this.espaciotrece = [];
     this.espaciocartoce = [];
     this.espacioquince = [];
@@ -159,5 +160,114 @@ export class ElegirCartaComponent implements OnInit {
 
 
   }
+
+  cartaaleatoria(){
+
+    this.espaciouno = [];
+    this.espaciodos = [];
+    this.espaciotres = [];
+    this.espaciocuatro = [];
+    this.espaciocinco = [];
+    this.espacioseis = [];
+    this.espaciosiete = [];
+    this.espacioocho = [];
+    this.espacionueve = [];
+    this.espaciodiez = [];
+    this.espacioonce = [];
+    this.espaciodoce = [];
+    this.espaciotrece = [];
+    this.espaciocartoce = [];
+    this.espacioquince = [];
+    this.espaciodieziseis = [];
+
+    var cartas = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54];
+
+
+    var ran = Math.floor(Math.random() * cartas.length);
+    this.espaciouno.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciodos.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciotres.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciocuatro.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciocinco.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espacioseis.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciosiete.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espacioocho.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espacionueve.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciodiez.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espacioonce.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciodoce.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciotrece.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length) ;
+    this.espaciocartoce.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espacioquince.push(cartas[ran]);
+    cartas.splice(ran, 1);
+    console.log(ran);
+
+    ran = Math.floor(Math.random() * cartas.length);
+    this.espaciodieziseis.push(cartas[ran]);
+    cartas.splice(ran, 1);
+
+
+
+
+    }
+
+
+
 
 }
