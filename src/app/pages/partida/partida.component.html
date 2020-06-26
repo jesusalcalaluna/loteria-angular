@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-6">
           <h5>La carta es:</h5>
-          <img style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
+          <img *ngIf="numerobajara" style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
 
           <div class="row mt-5">
             <div class="col-12 mt-1">
@@ -32,11 +32,9 @@
           </div>
 
           <div class="row mt-5">
+
             <div class="col-12 mt-1">
-              <button (click)="detener()" type="button" class="btn btn-secondary btn-block">Detener</button>
-            </div>
-            <div class="col-12 mt-1">
-              <button (click)="seguir()" type="button" class="btn btn-secondary btn-block">Empezar</button>
+              <button (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
             </div>
           </div>
         </div>

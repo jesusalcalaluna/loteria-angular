@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import {LoteriaService} from "../../services/loteria.service";
 import {socketLoteriaService} from "../../services/socketLoteria.service";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-partida',
   templateUrl: './partida.component.html',
@@ -33,9 +33,9 @@ export class PartidaComponent implements OnInit, OnDestroy {
   espacio14: HTMLElement;
   espacio15: HTMLElement;
   espacio16: HTMLElement;
+  resetBtn: HTMLElement;
 
-
-  cartas:any = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  cartas:any = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
   numeroCartas:any;
 
   numerobajara:any;
@@ -43,19 +43,17 @@ export class PartidaComponent implements OnInit, OnDestroy {
   constructor( private loteriaservices:LoteriaService,
                private socketloteria:socketLoteriaService) {
 
-    this.socketloteria.obtenerbaraja(localStorage.getItem('sala')).subscribe( (resp) => {
-      this.numerobajara = resp.data
-    });
+
 
 
   }
 
   ngOnInit(): void {
-    this.numeroCartas = this.loteriaservices.obtenerCartas()
+    this.numeroCartas = this.loteriaservices.obtenerCartas();
     this.players.push(localStorage.getItem('player'));
 
     if (!this.playerstotal[this.players[0]]){
-      this.socketloteria.joinRoom(localStorage.getItem('sala'), this.players)
+      this.socketloteria.joinRoom(localStorage.getItem('sala'), this.players);
 
     }
 
@@ -74,19 +72,37 @@ export class PartidaComponent implements OnInit, OnDestroy {
     this.playerstotal = [];
   }
 
+  empezar(){
+    this.socketloteria.obtenerbaraja(localStorage.getItem('sala')).subscribe( (resp) => {
+      if (resp.data) {
+        this.numerobajara = resp.data;
+      } else {
+        //activar boton de reinicio
+        this.resetBtn = document.getElementById('reset');
+        this.resetBtn.classList.remove('disabled');
+        console.log('termino el juego');
+      }
+
+    });
+    this.resetBtn = document.getElementById('reset');
+    this.resetBtn.setAttribute('class', 'disabled');
+    console.log('reset');
+
+  }
+
 
   clickBoton(index:any, carta:any){
-    console.log(index)
+    console.log(index);
 
     this.cartita = document.getElementById(index.toString());
     if (this.cartita.getAttribute('src')){
       this.cartita.removeAttribute('src');
-      var idx = this.cartasSeleccionadas.indexOf(carta)
-      this.cartasSeleccionadas.splice(idx, 1)
+      var idx = this.cartasSeleccionadas.indexOf(carta);
+      this.cartasSeleccionadas.splice(idx, 1);
 
     } else {
       this.cartita.setAttribute('src', "./assets/img/frijol.png");
-      this.cartasSeleccionadas.push(carta)
+      this.cartasSeleccionadas.push(carta);
 
     }
 
@@ -138,14 +154,14 @@ export class PartidaComponent implements OnInit, OnDestroy {
           title: 'Has ganado la llena',
           showConfirmButton: false,
           timer: 1500
-        })
+        });
     } else {
       Swal.fire({
         icon: 'error',
         title: 'mentiroso',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     }
 
   }
@@ -163,14 +179,14 @@ export class PartidaComponent implements OnInit, OnDestroy {
         title: 'Has ganado la llena',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     } else {
       Swal.fire({
         icon: 'error',
         title: 'mentiroso',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     }
 
 
@@ -209,14 +225,14 @@ export class PartidaComponent implements OnInit, OnDestroy {
         title: 'Has ganado la llena',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     } else {
       Swal.fire({
         icon: 'error',
         title: 'mentiroso',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     }
 
 
@@ -225,13 +241,8 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   }
 
-  detener(){
-    this.socketloteria.detener();
-  }
 
 
-  seguir(){
-    this.socketloteria.resumen();
-  }
+
 
 }
