@@ -32,7 +32,7 @@ export class socketLoteriaService {
 
   public obtenerbaraja(room){
 
-    this.socket.emit('play', room);
+
     return Observable.create((observer) => {
       this.socket.on('play', (data) => {
         observer.next(data);
@@ -41,13 +41,50 @@ export class socketLoteriaService {
 
   }
 
-
-  public detener(){
-    this.socket.emit('pausa', 'pausa');
+  public empezarJuego(room){
+    this.socket.emit('play', room);
   }
 
-  public resumen(){
-    this.socket.emit('resume', 'seguir');
+
+  public detener(room){
+    this.socket.emit('stop', room)
+  }
+
+  public ganoloteria(room:string, player:string){
+    this.socket.emit('loteria', {room, player});
+
+  }
+  public ganocentro(room:string, player:string){
+    this.socket.emit('centro', {room, player});
+
+  }
+  public ganollena(room:string, player:string){
+    this.socket.emit('llena', {room, player});
+
+  }
+
+  public ganadorloteria(){
+    return Observable.create((observer) => {
+      this.socket.on('loteria', (data) => {
+        observer.next(data);
+      });
+    });
+  }
+
+  public ganadorcentro(){
+    return Observable.create((observer) => {
+      this.socket.on('centro', (data) => {
+        observer.next(data);
+      });
+    });
+  }
+
+  public ganadorllena(){
+    return Observable.create((observer) => {
+      this.socket.on('llena', (data) => {
+        observer.next(data);
+      });
+    });
   }
 
 }

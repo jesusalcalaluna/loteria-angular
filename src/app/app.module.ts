@@ -16,6 +16,8 @@ import { PartidaComponent } from './pages/partida/partida.component';
 import {FormsModule} from "@angular/forms";
 import {socketLoteriaService} from "./services/socketLoteria.service";
 import { LoginComponent } from './pages/login/login.component';
+import {HttpClientModule} from "@angular/common/http";
+import { RegistrarComponent } from './pages/registrar/registrar.component';
 
 
 
@@ -30,12 +32,14 @@ import { LoginComponent } from './pages/login/login.component';
     ElegirCartaComponent,
     PartidaComponent,
     LoginComponent,
+    RegistrarComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         DragDropModule,
-        FormsModule
+        FormsModule,
+      HttpClientModule
     ],
   providers: [
     socketLoteriaService

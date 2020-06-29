@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {LoteriaService} from "../../services/loteria.service";
 import Swal from 'sweetalert2';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registrar',
+  templateUrl: './registrar.component.html',
+  styleUrls: ['./registrar.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegistrarComponent implements OnInit {
 
   usuario:string;
   password:string;
@@ -19,20 +19,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
-    this.loteria.login(this.usuario, this.password).subscribe( (resp:any) => {
+  registrar() {
+    this.loteria.registrar(this.usuario, this.password).subscribe( (resp:any) => {
       if (resp.status == 'ok'){
         Swal.fire({
+
           icon: 'success',
-          title: 'Benvenido',
+          title: 'Registrado',
           showConfirmButton: false,
           timer: 1500
         })
-        this.router.navigateByUrl('/inicio');
+        this.router.navigateByUrl('/inicio')
       } else {
         Swal.fire({
+
           icon: 'error',
-          title: 'Error usuario / contraseña',
+          title: 'Error al registrarte',
           showConfirmButton: false,
           timer: 1500
         })
@@ -41,4 +43,5 @@ export class LoginComponent implements OnInit {
       console.log(error);
     });
   }
+
 }

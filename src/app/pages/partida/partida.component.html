@@ -12,29 +12,33 @@
 
         </div>
       </div>
+
     </div>
     <div class="col-5 text-center ">
       <div class="row">
         <div class="col-6">
           <h5>La carta es:</h5>
-          <img *ngIf="numerobajara" style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
+          <img *ngIf="numerobajara > 0" style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
 
           <div class="row mt-5">
             <div class="col-12 mt-1">
-              <button (click)="loteria()" type="button" class="btn btn-danger btn-block">Loteria</button>
+              <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
             </div>
             <div class="col-12 mt-1">
-              <button (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+              <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
             </div>
             <div class="col-12 mt-1">
-              <button (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
+              <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
             </div>
           </div>
 
-          <div class="row mt-5">
+          <div class="row mt-5" >
+            <div class="col-12 mt-1">
+              <button *ngIf="mostrarbtn" (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
+            </div>
 
             <div class="col-12 mt-1">
-              <button (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
+              <button *ngIf="mostrarbtnreinicar" (click)="reiniciar()" type="button" id="reset" class="btn btn-primary btn-block">Reiniciar</button>
             </div>
           </div>
         </div>
@@ -47,6 +51,11 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="col-12 mt-2">
+        <div class="alert alert-dismissible alert-primary pr-5" *ngFor="let ganador of ganadores">
+          <strong> {{ ganador }} </strong>
         </div>
       </div>
     </div>

@@ -1,13 +1,12 @@
-
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 align-self-center">
       <div class="card text-center">
         <div class="card-header">
-          <h3>Bienvenidos a la loteria</h3>
+          <h3>Registrate en la loteria</h3>
         </div>
         <div class="card-body">
-          <h4 class="text-center">Inicia sesion</h4>
+          <h4 class="text-center">Registro</h4>
           <form>
             <div class="form-group">
               <label>Usuario:</label>
@@ -18,9 +17,13 @@
               <input type="password" [(ngModel)]="password"  class="form-control" id="password" name="password">
             </div>
             <div class="form-group">
-              <a routerLink="/registrar"> Registrate </a>
+              <label>Confirmar password:</label>
+              <input type="password"  class="form-control" id="password_repet" name="password_repet">
             </div>
-            <button (click)="login()" type="button" class="btn btn-primary">Iniciar sesion</button>
+            <div class="form-group">
+              <a routerLink="/"> Iniciar sesion </a>
+            </div>
+            <button (click)="registrar()" type="button" class="btn btn-primary">Registrar</button>
           </form>
         </div>
       </div>
