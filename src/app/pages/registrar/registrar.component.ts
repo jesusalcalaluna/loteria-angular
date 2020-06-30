@@ -21,7 +21,8 @@ export class RegistrarComponent implements OnInit {
 
   registrar() {
     this.loteria.registrar(this.usuario, this.password).subscribe( (resp:any) => {
-      if (resp.status == 'ok'){
+
+      if (resp.message == 'ok'){
         Swal.fire({
 
           icon: 'success',
@@ -34,10 +35,11 @@ export class RegistrarComponent implements OnInit {
         Swal.fire({
 
           icon: 'error',
-          title: 'Error al registrarte',
+          title: 'Error al registrarte,' + `${resp.message}`,
           showConfirmButton: false,
           timer: 1500
         })
+
       }
     }, (error) => {
       console.log(error);

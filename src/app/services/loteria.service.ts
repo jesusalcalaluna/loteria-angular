@@ -33,6 +33,10 @@ export class LoteriaService {
     return this.http.post(`${this.url}/login`, data)
       .pipe(
         map( (resp:any) => {
+          if (resp.status == 'error'){
+            console.log(resp);
+            return resp;
+          }
           localStorage.setItem('player', resp.data.user);
           return resp;
         })
@@ -45,8 +49,12 @@ export class LoteriaService {
       user:usuario,
       password:password
     }
-    return this.http.post(`${this.url}/registrar`, data)
+    return this.http.post(`${this.url}/signup`, data)
       .pipe( map( (resp:any) => {
+        if (resp.status == 'error'){
+          console.log(resp);
+          return resp;
+        }
         localStorage.setItem('player', resp.data.user);
         return resp;
       }));
