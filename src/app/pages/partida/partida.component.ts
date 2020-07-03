@@ -76,13 +76,11 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
     this.socketloteria.ganadorloteria().subscribe( (resp) =>{
       this.mostrarbtnloteria = false;
-      this.mostrarbtncentro = false;
       this.ganadores.push(resp + ' ganó loteria.')
     })
 
     this.socketloteria.ganadorcentro().subscribe( (resp) =>{
       this.mostrarbtncentro = false;
-      this.mostrarbtnloteria = false;
       this.ganadores.push(resp + ' ganó centro.')
     })
 
@@ -215,7 +213,6 @@ export class PartidaComponent implements OnInit, OnDestroy {
       });
       this.socketloteria.ganoloteria(localStorage.getItem('sala'),localStorage.getItem('player'));
       this.mostrarbtnloteria = false;
-      this.mostrarbtncentro = false;
     } else {
       Swal.fire({
         icon: 'error',
@@ -264,7 +261,6 @@ export class PartidaComponent implements OnInit, OnDestroy {
       });
       this.socketloteria.ganocentro(localStorage.getItem('sala'),localStorage.getItem('player'));
       this.mostrarbtncentro = false;
-      this.mostrarbtnloteria = false;
     } else {
       Swal.fire({
         icon: 'error',
