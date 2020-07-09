@@ -31,7 +31,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let usuario of data; let i = index" >
-              <th scope="row">{{ i }}</th>
+              <th scope="row">{{ i+1 }}</th>
               <td>{{ usuario.user }}</td>
               <td>{{ usuario.full_wins }}</td>
               <td>{{ usuario.center_wins  }}</td>
