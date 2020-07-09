@@ -60,4 +60,8 @@ export class LoteriaService {
       }));
   }
 
+  getUsers() {
+    return this.http.get(`${this.url}/getUserScore`);
+  }
+
 }

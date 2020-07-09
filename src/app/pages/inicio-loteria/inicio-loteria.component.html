@@ -17,6 +17,29 @@
             </div>
           </div>
         </div>
+        <h3 class="mt-2">Mejores Jugadores</h3>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Llena</th>
+              <th scope="col">Centro</th>
+              <th scope="col">Loteria</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of data; let i = index" >
+              <th scope="row">{{ i }}</th>
+              <td>{{ usuario.user }}</td>
+              <td>{{ usuario.full_wins }}</td>
+              <td>{{ usuario.center_wins  }}</td>
+              <td>{{ usuario.lottery_wins  }}</td>
+              <td>{{ usuario.lottery_wins  }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="col align-self-center">

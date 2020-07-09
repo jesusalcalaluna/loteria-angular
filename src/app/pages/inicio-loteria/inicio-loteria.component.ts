@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoteriaService } from 'src/app/services/loteria.service';
 
 @Component({
   selector: 'app-inicio-loteria',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioLoteriaComponent implements OnInit {
 
-  constructor() { }
+  data:any;
+
+  constructor(private servisLoteria:LoteriaService) {
+    this.servisLoteria.getUsers().subscribe((resp:any)=>{
+      console.log(resp);
+      this.data = resp.data["users"];
+    });
+   }
 
   ngOnInit(): void {
   }
