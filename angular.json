@@ -24,8 +24,7 @@
               "src/assets"
             ],
             "styles": [
-
-             "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -94,7 +93,6 @@
               "src/assets"
             ],
             "styles": [
-
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
@@ -133,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "loteria-sockets"
+  "defaultProject": "loteria-sockets",
+  "cli": {
+    "analytics": "be9231aa-0ec3-4943-9be2-095b8886bfe0"
+  }
 }
