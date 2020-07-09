@@ -8,7 +8,7 @@ import {PartidaComponent} from "./pages/partida/partida.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrarComponent} from "./pages/registrar/registrar.component";
 
-const routes: Routes = [
+const routes: Routes = [ 
   { path:'', component:LoginComponent },
   { path:'inicio', component:InicioLoteriaComponent},
   { path:'registrar', component:RegistrarComponent},

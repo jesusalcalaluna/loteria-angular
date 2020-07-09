@@ -9,10 +9,11 @@ import {LoteriaService} from "../../services/loteria.service";
   styleUrls: ['./elegir-carta.component.css']
 })
 export class ElegirCartaComponent implements OnInit {
-
+ // console.log(localStorage.getItem('numeroCarta'));
   cartasnum:any[] = [];
-
+  numeroCarta:string[] = [];
   cartaCompleta:any[] = [];
+  
 
   constructor( private router:Router,
                private loteriaservice:LoteriaService) {
@@ -21,7 +22,8 @@ export class ElegirCartaComponent implements OnInit {
       this.cartasnum.push(i)
     }
 
-
+    this.numeroCarta.push(localStorage.getItem('numeroCarta'));
+    console.log(this.numeroCarta);
 
   }
 
@@ -161,7 +163,7 @@ export class ElegirCartaComponent implements OnInit {
 
   }
 
-  cartaaleatoria(){
+  cartaaleatoria(){ 
 
     this.espaciouno = [];
     this.espaciodos = [];

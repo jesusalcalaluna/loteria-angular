@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class SalasComponent implements OnInit {
 
   nombresala:string;
+  numeroCarta:string;
 
   player:any[] = [];
   constructor( private serviceSocketloteria:socketLoteriaService,
@@ -23,7 +24,7 @@ export class SalasComponent implements OnInit {
 
 
     localStorage.setItem('sala',this.nombresala);
-
+    localStorage.setItem('numeroCarta',this.numeroCarta);
 
     this.router.navigateByUrl('juego/carta');
   }
