@@ -42,6 +42,11 @@ export class LoteriaService {
         })
       );
   }
+  logout(){
+
+      localStorage.removeItem('player');
+      
+  }
 
 
   registrar(usuario:string, password:string ) {
