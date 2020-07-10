@@ -14,8 +14,9 @@
         </div>
       </div> 
     </div>
-    <div class="col-8  mt-5">
-      <div class="row">
+    
+    <div  class="col-8  mt-5">
+      <div *ngIf="mostrarcartauno" class="row">
         <div class="col-3 text-center" id="diseño-cuadricula"
              cdkDropList
              [cdkDropListData]="espaciouno"
@@ -113,18 +114,223 @@
           <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodieziseis" cdkDrag>
         </div>
       </div>
+
+      <div *ngIf="mostrarcartados" class="row">
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciouno2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%;" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciouno2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodos2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodos2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciotres2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciotres2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocuatro2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocuatro2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocinco2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocinco2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioseis2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioseis2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciosiete2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciosiete2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioocho2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioocho2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacionueve2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacionueve2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodiez2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodiez2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioonce2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioonce2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodoce2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodoce2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciotrece2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciotrece2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocartoce2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocartoce2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioquince2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioquince2" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodieziseis2"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodieziseis2" cdkDrag>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrarcartatres" class="row">
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciouno3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%;" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciouno3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodos3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodos3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciotres3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciotres3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocuatro3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocuatro3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocinco3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocinco3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioseis3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioseis3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciosiete3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciosiete3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioocho3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioocho3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacionueve3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacionueve3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodiez3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodiez3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioonce3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioonce3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodoce3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodoce3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciotrece3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciotrece3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciocartoce3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciocartoce3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espacioquince3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espacioquince3" cdkDrag>
+        </div>
+        <div class="col-3 text-center" id="diseño-cuadricula"
+             cdkDropList
+             [cdkDropListData]="espaciodieziseis3"
+             (cdkDropListDropped)="drop($event)">
+          <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodieziseis3" cdkDrag>
+        </div>
+      </div>
+      
     </div>
+
     <div class="col-4 mt-5">
       <div class="row">
-        <div class="col-12">
-          <button type="button" (click)="resetarTablero()" class="btn btn-primary btn-block">Resetear</button>
+        <div *ngIf="mostrarbtnentrar" class="col-12 mt-5">
+          <button type="button"  (click)="entrarJuego()" class="btn btn-primary btn-block">Entrar a jugar</button>
+        </div>
+        <div *ngIf="mostrarbtn" class="col-12 mt-5">
+          <button type="button" (click)="siguiente()" class="btn btn-primary btn-block">Siguiente carta</button>
         </div>
         <div class="col-12 mt-5">
-          <button type="button" (click)="entrarJuego()" class="btn btn-primary btn-block">Entrar a jugar</button>
+          <button type="button" (click)="resetarTablero()" class="btn btn-primary btn-block">Resetear</button>
         </div>
         <div class="col-12 mt-5">
           <button type="button" (click)="cartaaleatoria()" class="btn btn-primary btn-block">Generar carta aleatoria</button>
         </div>
+        
+        
       </div>
     </div>
   </div>
