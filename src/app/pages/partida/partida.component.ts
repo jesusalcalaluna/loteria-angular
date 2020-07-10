@@ -58,7 +58,7 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.numeroCartas = this.loteriaservices.obtenerCartas();
     this.players.push(localStorage.getItem('player'));
 
