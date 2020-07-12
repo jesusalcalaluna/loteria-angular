@@ -16,6 +16,10 @@ export class PartidaComponent implements OnInit, OnDestroy {
   cartita: HTMLElement;
   cartasSeleccionadas:any[]=[];
   barajas:any[] = [];
+  aux="a";
+  mostrarcartauno:boolean=false;
+  mostrarcartados:boolean=false;
+  mostrarcartatres:boolean=false;
 
   espacio1: HTMLElement;
   espacio2: HTMLElement;
@@ -40,6 +44,9 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   cartas:any = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
   numeroCartas:any;
+  numeroCartas2:any;
+  numeroCartas3:any;
+
 
   numerobajara:any;
 
@@ -53,6 +60,18 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   constructor( private loteriaservices:LoteriaService,
                private socketloteria:socketLoteriaService) {
+                this.aux= localStorage.getItem('numeroCarta');
+                if(this.aux=="1"){
+                  this.mostrarcartauno=true;}
+                if(this.aux=="2"){
+                  
+                  this.mostrarcartados=true;
+                this.numeroCartas2 = this.loteriaservices.obtenerCartas2();}
+                if(this.aux=="3"){
+                  
+                  this.mostrarcartatres=true;
+                  this.numeroCartas2 = this.loteriaservices.obtenerCartas2();
+                  this.numeroCartas3 = this.loteriaservices.obtenerCartas3();}
 
 
 
@@ -61,6 +80,17 @@ export class PartidaComponent implements OnInit, OnDestroy {
   ngOnInit(): void { 
     this.numeroCartas = this.loteriaservices.obtenerCartas();
     this.players.push(localStorage.getItem('player'));
+    if(this.aux=="2"){console.log("entro al dos");
+      this.mostrarcartados=true;
+                this.numeroCartas2 = this.loteriaservices.obtenerCartas2();
+    }
+    else{console.log("entro al 3");
+    this.mostrarcartatres=true;
+    this.numeroCartas2 = this.loteriaservices.obtenerCartas2();
+    console.log(this.loteriaservices.obtenerCartas2(),this.loteriaservices.obtenerCartas3(),this.loteriaservices.obtenerCartas())
+    this.numeroCartas3 = this.loteriaservices.obtenerCartas3();
+    console.log(this.numeroCartas, this.numeroCartas2, this.numeroCartas3, this.mostrarcartatres);
+    }
 
     if (!this.playerstotal[this.players[0]]){
       this.socketloteria.joinRoom(localStorage.getItem('sala'), this.players);

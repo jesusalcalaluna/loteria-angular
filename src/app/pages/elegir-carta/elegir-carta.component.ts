@@ -236,6 +236,7 @@ export class ElegirCartaComponent implements OnInit {
     || this.espaciodieziseis.length > 1){
       console.log('hay dos cartas en un espacio')
     } else {
+      console.log("checar", this.espaciouno,this.espaciouno2,this.espaciouno3);
       this.cartaCompleta.push(this.espaciouno[0]);
       this.cartaCompleta.push(this.espaciodos[0]);
       this.cartaCompleta.push(this.espaciotres[0]);
@@ -254,7 +255,8 @@ export class ElegirCartaComponent implements OnInit {
       this.cartaCompleta.push(this.espaciodieziseis[0]);
 
       this.loteriaservice.guardarCartas(this.cartaCompleta);
-      if(this.espaciouno2.length==1){
+
+      if(this.ass==2){
       this.cartaCompleta2.push(this.espaciouno2[0]);
       this.cartaCompleta2.push(this.espaciodos2[0]);
       this.cartaCompleta2.push(this.espaciotres2[0]);
@@ -272,9 +274,28 @@ export class ElegirCartaComponent implements OnInit {
       this.cartaCompleta2.push(this.espacioquince2[0]);
       this.cartaCompleta2.push(this.espaciodieziseis2[0]);
 
-      this.loteriaservice.guardarCartas(this.cartaCompleta2);
+      this.loteriaservice.guardarCartas2(this.cartaCompleta2);
       }
-      if(this.espaciouno3.length==1){
+      if(this.ass==3){
+        this.cartaCompleta2.push(this.espaciouno2[0]);
+        this.cartaCompleta2.push(this.espaciodos2[0]);
+        this.cartaCompleta2.push(this.espaciotres2[0]);
+        this.cartaCompleta2.push(this.espaciocuatro2[0]);
+        this.cartaCompleta2.push(this.espaciocinco2[0]);
+        this.cartaCompleta2.push(this.espacioseis2[0]);
+        this.cartaCompleta2.push(this.espaciosiete2[0]);
+        this.cartaCompleta2.push(this.espacioocho2[0]);
+        this.cartaCompleta2.push(this.espacionueve2[0]);
+        this.cartaCompleta2.push(this.espaciodiez2[0]);
+        this.cartaCompleta2.push(this.espacioonce2[0]);
+        this.cartaCompleta2.push(this.espaciodoce2[0]);
+        this.cartaCompleta2.push(this.espaciotrece2[0]);
+        this.cartaCompleta2.push(this.espaciocartoce2[0]);
+        this.cartaCompleta2.push(this.espacioquince2[0]);
+        this.cartaCompleta2.push(this.espaciodieziseis2[0]);
+  
+        this.loteriaservice.guardarCartas2(this.cartaCompleta2);
+
       this.cartaCompleta3.push(this.espaciouno3[0]);
       this.cartaCompleta3.push(this.espaciodos3[0]);
       this.cartaCompleta3.push(this.espaciotres3[0]);
@@ -292,9 +313,9 @@ export class ElegirCartaComponent implements OnInit {
       this.cartaCompleta3.push(this.espacioquince3[0]);
       this.cartaCompleta3.push(this.espaciodieziseis3[0]);
 
-      this.loteriaservice.guardarCartas(this.cartaCompleta3);
+      this.loteriaservice.guardarCartas3(this.cartaCompleta3);
       }
-
+      console.log("asdasd",this.cartaCompleta2, this.cartaCompleta3);
       this.router.navigateByUrl('juego/partida')
     }
 
@@ -303,7 +324,17 @@ export class ElegirCartaComponent implements OnInit {
 
   cartaaleatoria(){ 
 
-    this.espaciouno = [];
+    
+
+   
+
+    
+
+    var cartas = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54];
+
+    
+    if(this.asss==1){
+      this.espaciouno = [];
     this.espaciodos = [];
     this.espaciotres = [];
     this.espaciocuatro = [];
@@ -320,48 +351,10 @@ export class ElegirCartaComponent implements OnInit {
     this.espacioquince = [];
     this.espaciodieziseis = [];
 
-    this.espaciouno2 = [];
-    this.espaciodos2 = [];
-    this.espaciotres2 = [];
-    this.espaciocuatro2 = [];
-    this.espaciocinco2 = [];
-    this.espacioseis2 = [];
-    this.espaciosiete2 = [];
-    this.espacioocho2 = [];
-    this.espacionueve2 = [];
-    this.espaciodiez2 = [];
-    this.espacioonce2 = [];
-    this.espaciodoce2 = [];
-    this.espaciotrece2 = [];
-    this.espaciocartoce2 = [];
-    this.espacioquince2 = [];
-    this.espaciodieziseis2 = [];
-
-    this.espaciouno3 = [];
-    this.espaciodos3 = [];
-    this.espaciotres3 = [];
-    this.espaciocuatro3 = [];
-    this.espaciocinco3 = [];
-    this.espacioseis3 = [];
-    this.espaciosiete3 = [];
-    this.espacioocho3 = [];
-    this.espacionueve3 = [];
-    this.espaciodiez3 = [];
-    this.espacioonce3 = [];
-    this.espaciodoce3 = [];
-    this.espaciotrece3 = [];
-    this.espaciocartoce3 = [];
-    this.espacioquince3 = [];
-    this.espaciodieziseis3 = [];
-
-    var cartas = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54];
-
-    
-    if(this.asss==1){
     var ran = Math.floor(Math.random() * cartas.length);
     this.espaciouno.push(cartas[ran]);
     cartas.splice(ran, 1);
-    console.log(ran);
+    console.log("uno",ran, this.espaciouno, this.asss);
 
     ran = Math.floor(Math.random() * cartas.length);
     this.espaciodos.push(cartas[ran]);
@@ -439,10 +432,29 @@ export class ElegirCartaComponent implements OnInit {
     }
 ///////////////////////////////////////////////////77
     if(this.asss==2){
+      this.espaciouno2 = [];
+      this.espaciodos2 = [];
+      this.espaciotres2 = [];
+      this.espaciocuatro2 = [];
+      this.espaciocinco2 = [];
+      this.espacioseis2 = [];
+      this.espaciosiete2 = [];
+      this.espacioocho2 = [];
+      this.espacionueve2 = [];
+      this.espaciodiez2 = [];
+      this.espacioonce2 = [];
+      this.espaciodoce2 = [];
+      this.espaciotrece2 = [];
+      this.espaciocartoce2 = [];
+      this.espacioquince2 = [];
+      this.espaciodieziseis2 = [];
+      var cartas = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54];
+
       var ran = Math.floor(Math.random() * cartas.length);
     this.espaciouno2.push(cartas[ran]);
     cartas.splice(ran, 1);
-    console.log(ran);
+    console.log("dos",ran, this.espaciouno2, this.asss);
+
 
     ran = Math.floor(Math.random() * cartas.length);
     this.espaciodos2.push(cartas[ran]);
@@ -520,6 +532,24 @@ export class ElegirCartaComponent implements OnInit {
     }
 //////////////////////////////////////////////////////////
     if(this.asss==3){
+      this.espaciouno3 = [];
+    this.espaciodos3 = [];
+    this.espaciotres3 = [];
+    this.espaciocuatro3 = [];
+    this.espaciocinco3 = [];
+    this.espacioseis3 = [];
+    this.espaciosiete3 = [];
+    this.espacioocho3 = [];
+    this.espacionueve3 = [];
+    this.espaciodiez3 = [];
+    this.espacioonce3 = [];
+    this.espaciodoce3 = [];
+    this.espaciotrece3 = [];
+    this.espaciocartoce3 = [];
+    this.espacioquince3 = [];
+    this.espaciodieziseis3 = [];
+      var cartas = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46,47,48,49,50,51,52,53,54];
+
       var ran = Math.floor(Math.random() * cartas.length);
     this.espaciouno3.push(cartas[ran]);
     cartas.splice(ran, 1);
