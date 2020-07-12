@@ -18,6 +18,7 @@ import {socketLoteriaService} from "./services/socketLoteria.service";
 import { LoginComponent } from './pages/login/login.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RegistrarComponent } from './pages/registrar/registrar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -33,6 +34,7 @@ import { RegistrarComponent } from './pages/registrar/registrar.component';
     PartidaComponent,
     LoginComponent,
     RegistrarComponent,
+    NavbarComponent,
   ],
     imports: [
         BrowserModule,

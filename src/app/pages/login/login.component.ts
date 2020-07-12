@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+
     this.loteria.login(this.usuario, this.password).subscribe( (resp:any) => {
+      
       if (resp.message == 'ok'){
         Swal.fire({
           icon: 'success',
@@ -46,5 +48,6 @@ export class LoginComponent implements OnInit {
         timer: 1500
       })
     });
+
   }
 }
