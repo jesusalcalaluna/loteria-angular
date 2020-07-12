@@ -9,9 +9,11 @@ import {socketLoteriaService} from "./services/socketLoteria.service";
 export class AppComponent {
   title = 'loteria-sockets';
 
+  user:String;
 
   constructor( private socketloteria:socketLoteriaService ) {
     this.socketloteria.setupSocketConnection()
+    this.user = localStorage.getItem('player');
   }
 
 }

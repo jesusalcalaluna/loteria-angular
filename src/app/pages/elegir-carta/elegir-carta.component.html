@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container mt-5">
 
   <h2 class="text-center">Arma tu carta para el juego:</h2>
@@ -12,9 +13,9 @@
           <img src="./assets/img/cartas/{{carta}}.jpg" cdkDrag style="width: 10%"
                *ngFor="let carta of cartasnum">
         </div>
-      </div> 
+      </div>
     </div>
-    
+
     <div  class="col-8  mt-5">
       <div *ngIf="mostrarcartauno" class="row">
         <div class="col-3 text-center" id="diseño-cuadricula"
@@ -213,7 +214,7 @@
           <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodieziseis2" cdkDrag>
         </div>
       </div>
-      
+
       <div *ngIf="mostrarcartatres" class="row">
         <div class="col-3 text-center" id="diseño-cuadricula"
              cdkDropList
@@ -312,7 +313,7 @@
           <img style="width: 60%" src="./assets/img/cartas/{{item}}.jpg" *ngFor="let item of espaciodieziseis3" cdkDrag>
         </div>
       </div>
-      
+
     </div>
 
     <div class="col-4 mt-5">
@@ -329,8 +330,8 @@
         <div class="col-12 mt-5">
           <button type="button" (click)="cartaaleatoria()" class="btn btn-primary btn-block">Generar carta aleatoria</button>
         </div>
-        
-        
+
+
       </div>
     </div>
   </div>
