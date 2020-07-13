@@ -171,24 +171,62 @@ export class PartidaComponent implements OnInit, OnDestroy {
     console.log(this.cartasSeleccionadas);
   }
 
-  loteria(){
+  loteria(index:any){
+    if(index == 1){
+      this.espacio1 = document.getElementById('0');
+      this.espacio2 = document.getElementById('1');
+      this.espacio3 = document.getElementById('2');
+      this.espacio4 = document.getElementById('3');
+      this.espacio5 = document.getElementById('4');
+      this.espacio6 = document.getElementById('5');
+      this.espacio7 = document.getElementById('6');
+      this.espacio8 = document.getElementById('7');
+      this.espacio9 = document.getElementById('8');
+      this.espacio10 = document.getElementById('9');
+      this.espacio11 = document.getElementById('10');
+      this.espacio12 = document.getElementById('11');
+      this.espacio13 = document.getElementById('12');
+      this.espacio14 = document.getElementById('13');
+      this.espacio15 = document.getElementById('14');
+      this.espacio16 = document.getElementById('15');
+    }
+    if(index == 2){
+      this.espacio1 = document.getElementById('50');
+      this.espacio2 = document.getElementById('51');
+      this.espacio3 = document.getElementById('52');
+      this.espacio4 = document.getElementById('53');
+      this.espacio5 = document.getElementById('54');
+      this.espacio6 = document.getElementById('55');
+      this.espacio7 = document.getElementById('56');
+      this.espacio8 = document.getElementById('57');
+      this.espacio9 = document.getElementById('58');
+      this.espacio10 = document.getElementById('59');
+      this.espacio11 = document.getElementById('60');
+      this.espacio12 = document.getElementById('61');
+      this.espacio13 = document.getElementById('62');
+      this.espacio14 = document.getElementById('63');
+      this.espacio15 = document.getElementById('64');
+      this.espacio16 = document.getElementById('65');
+    }
+    if(index == 3){
+      this.espacio1 = document.getElementById('200');
+      this.espacio2 = document.getElementById('201');
+      this.espacio3 = document.getElementById('202');
+      this.espacio4 = document.getElementById('203');
+      this.espacio5 = document.getElementById('204');
+      this.espacio6 = document.getElementById('205');
+      this.espacio7 = document.getElementById('206');
+      this.espacio8 = document.getElementById('207');
+      this.espacio9 = document.getElementById('208');
+      this.espacio10 = document.getElementById('209');
+      this.espacio11 = document.getElementById('210');
+      this.espacio12 = document.getElementById('211');
+      this.espacio13 = document.getElementById('212');
+      this.espacio14 = document.getElementById('213');
+      this.espacio15 = document.getElementById('214');
+      this.espacio16 = document.getElementById('215');
+    }
 
-    this.espacio1 = document.getElementById('0');
-    this.espacio2 = document.getElementById('1');
-    this.espacio3 = document.getElementById('2');
-    this.espacio4 = document.getElementById('3');
-    this.espacio5 = document.getElementById('4');
-    this.espacio6 = document.getElementById('5');
-    this.espacio7 = document.getElementById('6');
-    this.espacio8 = document.getElementById('7');
-    this.espacio9 = document.getElementById('8');
-    this.espacio10 = document.getElementById('9');
-    this.espacio11 = document.getElementById('10');
-    this.espacio12 = document.getElementById('11');
-    this.espacio13 = document.getElementById('12');
-    this.espacio14 = document.getElementById('13');
-    this.espacio15 = document.getElementById('14');
-    this.espacio16 = document.getElementById('15');
     if (this.espacio1.getAttribute('src') && this.espacio2.getAttribute('src') &&
         this.espacio3.getAttribute('src') && this.espacio4.getAttribute('src') ||
         this.espacio5.getAttribute('src') && this.espacio6.getAttribute('src') &&
