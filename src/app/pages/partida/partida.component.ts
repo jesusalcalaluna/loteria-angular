@@ -155,7 +155,7 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
 
   clickBoton(index:any, carta:any){
-    console.log(index);
+    console.log(index, carta);
 
     this.cartita = document.getElementById(index.toString());
     if (this.cartita.getAttribute('src')){
