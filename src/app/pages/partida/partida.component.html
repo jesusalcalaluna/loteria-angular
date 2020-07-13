@@ -1,28 +1,27 @@
+<app-navbar></app-navbar>
 <div class="container">
   <h4>Estas en una partida</h4>
 
   <div class="row">
-   
+
     <div *ngIf="mostrarcartauno" class="col-9">
 
-      
+
           <div class="row">
             <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
 
 
               <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
               <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-    
+
             </div>
-         
-        
-        
+
       </div>
 
     </div>
     <div *ngIf="mostrarcartados" class="col-4">
 
-      
+
       <div class="row">
         <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
 
@@ -31,31 +30,31 @@
           <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
 
         </div>
-     
-    
-    
+
+
+
   </div>
 
 </div>
 <div *ngIf="mostrarcartados" class="col-4">
 
-      
+
   <div class="row">
     <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
 
 
-      <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-      <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+      <img (click)="clickBoton(i+50, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+50}}" (click)="clickBoton(i+50, carta)" class="frijol">
 
     </div>
- 
+
 
 
 </div>
 </div>
 <div *ngIf="mostrarcartatres" class="col-3">
 
-      
+
   <div class="row">
     <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
 
@@ -64,7 +63,7 @@
       <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
 
     </div>
- 
+
 
 
 </div>
@@ -72,16 +71,16 @@
 </div>
 <div *ngIf="mostrarcartatres" class="col-3">
 
-      
+
   <div class="row">
     <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
 
 
-      <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-      <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+      <img (click)="clickBoton(i+50, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+50}}" (click)="clickBoton(i+50, carta)" class="frijol">
 
     </div>
- 
+
 
 
 </div>
@@ -89,16 +88,16 @@
 </div>
 <div *ngIf="mostrarcartatres" class="col-3">
 
-      
+
   <div class="row">
     <div class="col-3 text-center" *ngFor="let carta of numeroCartas3; let i = index;" id="diseño-cuadricula">
 
 
-      <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-      <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+      <img (click)="clickBoton(i+200, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+200}}" (click)="clickBoton(i+200, carta)" class="frijol">
 
     </div>
- 
+
 
 
 </div>
@@ -129,7 +128,7 @@
           <div class="row mt-5" >
             <div class="col-12 mt-1">
               <button *ngIf="mostrarbtn" (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
-            </div> 
+            </div>
 
             <div class="col-12 mt-1">
               <button *ngIf="mostrarbtnreinicar" (click)="reiniciar()" type="button" id="reset" class="btn btn-primary btn-block">Reiniciar</button>
