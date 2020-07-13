@@ -250,7 +250,10 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   }
 
-  centro() {
+  centro(inde:any) {
+    console.log("entraste al centro")
+    if(inde==1){
+      console.log(inde, "estas en el 1");
     this.espacio11 = document.getElementById('10');
     this.espacio10 = document.getElementById('9');
     this.espacio6 = document.getElementById('5');
@@ -294,6 +297,101 @@ export class PartidaComponent implements OnInit, OnDestroy {
         showConfirmButton: false,
         timer: 1500
       });
+    }
+    }
+    if(inde==2){
+      console.log(inde,"estas en el dos");
+    this.espacio11 = document.getElementById('60');
+    this.espacio10 = document.getElementById('59');
+    this.espacio6 = document.getElementById('55');
+    this.espacio7 = document.getElementById('56');
+
+    if (this.espacio6.getAttribute('src') && this.espacio7.getAttribute('src') &&
+        this.espacio11.getAttribute('src') && this.espacio10.getAttribute('src')){
+      var encuentra = false;
+      for (let i = 0; i < this.barajaspasadas.length; i++) {
+        encuentra = false;
+        const bajarapasada = this.barajaspasadas[i];
+        for (let j = 0; j < this.cartasSeleccionadas.length; j++) {
+          const selecbaraja = this.cartasSeleccionadas[i];
+          if (selecbaraja != bajarapasada){
+            encuentra = true;
+            Swal.fire({
+              icon: 'error',
+              title: 'mentiroso',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            break;
+          }
+        }
+        if (encuentra){
+          break;
+        }
+      }
+      Swal.fire({
+        icon: 'success',
+        title: 'Has ganado centro',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.socketloteria.ganocentro(localStorage.getItem('sala'),localStorage.getItem('player'));
+      this.mostrarbtncentro = false;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'mentiroso',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    }
+    if(inde==3){
+      console.log(inde,"estas en el 3");
+    this.espacio11 = document.getElementById('210');
+    this.espacio10 = document.getElementById('209');
+    this.espacio6 = document.getElementById('205');
+    this.espacio7 = document.getElementById('206');
+
+    if (this.espacio6.getAttribute('src') && this.espacio7.getAttribute('src') &&
+        this.espacio11.getAttribute('src') && this.espacio10.getAttribute('src')){
+      var encuentra = false;
+      for (let i = 0; i < this.barajaspasadas.length; i++) {
+        encuentra = false;
+        const bajarapasada = this.barajaspasadas[i];
+        for (let j = 0; j < this.cartasSeleccionadas.length; j++) {
+          const selecbaraja = this.cartasSeleccionadas[i];
+          if (selecbaraja != bajarapasada){
+            encuentra = true;
+            Swal.fire({
+              icon: 'error',
+              title: 'mentiroso',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            break;
+          }
+        }
+        if (encuentra){
+          break;
+        }
+      }
+      Swal.fire({
+        icon: 'success',
+        title: 'Has ganado centro',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.socketloteria.ganocentro(localStorage.getItem('sala'),localStorage.getItem('player'));
+      this.mostrarbtncentro = false;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'mentiroso',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
     }
 
 
