@@ -64,11 +64,11 @@ export class PartidaComponent implements OnInit, OnDestroy {
                 if(this.aux=="1"){
                   this.mostrarcartauno=true;}
                 if(this.aux=="2"){
-                  
+
                   this.mostrarcartados=true;
                 this.numeroCartas2 = this.loteriaservices.obtenerCartas2();}
                 if(this.aux=="3"){
-                  
+
                   this.mostrarcartatres=true;
                   this.numeroCartas2 = this.loteriaservices.obtenerCartas2();
                   this.numeroCartas3 = this.loteriaservices.obtenerCartas3();}
@@ -77,7 +77,7 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.numeroCartas = this.loteriaservices.obtenerCartas();
     this.players.push(localStorage.getItem('player'));
     if(this.aux=="2"){console.log("entro al dos");
@@ -166,13 +166,9 @@ export class PartidaComponent implements OnInit, OnDestroy {
     } else {
       this.cartita.setAttribute('src', "./assets/img/frijol.png");
       this.cartasSeleccionadas.push(carta);
-      console.log(this.barajaspasadas);
     }
 
     console.log(this.cartasSeleccionadas);
-
-
-
   }
 
   loteria(){

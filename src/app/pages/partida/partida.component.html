@@ -1,158 +1,212 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <h4>Estas en una partida</h4>
-  
-    <div class="row">
-     
-      <div *ngIf="mostrarcartauno" class="col-9">
-  
-        
-            <div class="row">
-              <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
-  
-  
-                <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-                <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-      
-              </div>
-           
-          
-          
+  <h4>Estas en una partida</h4>
+
+  <div class="row">
+
+    <div *ngIf="mostrarcartauno" class="col-9">
+
+
+          <div class="row">
+            <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
+
+
+              <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+              <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+
+            </div>
+
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 mt-1">
+          <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
         </div>
-  
+        <div class="col-12 mt-1">
+          <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+        </div>
+        <div class="col-12 mt-1">
+          <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
+        </div>
       </div>
-      <div *ngIf="mostrarcartados" class="col-4">
-  
-        
-        <div class="row">
-          <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
-  
-  
-            <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-            <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-  
-          </div>
-       
-      
-      
+
     </div>
-  
+    <div *ngIf="mostrarcartados" class="col-4">
+
+
+      <div class="row">
+        <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
+
+
+          <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+          <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+
+        </div>
+
+
+
   </div>
-  <div *ngIf="mostrarcartados" class="col-4">
-  
-        
-    <div class="row">
-      <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
-  
-  
-        <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-        <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-  
-      </div>
-   
-  
-  
+  <div class="row mt-5">
+    <div class="col-12 mt-1">
+      <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
+    </div>
+    <div class="col-12 mt-1">
+      <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+    </div>
+    <div class="col-12 mt-1">
+      <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
+    </div>
+  </div>
+
+</div>
+<div *ngIf="mostrarcartados" class="col-4">
+
+
+  <div class="row">
+    <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
+
+
+      <img (click)="clickBoton(i+50, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+50}}" (click)="clickBoton(i+50, carta)" class="frijol">
+
+    </div>
+
+
+
+</div>
+<div class="row mt-5">
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
+  </div>
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+  </div>
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
   </div>
 </div>
-  <div *ngIf="mostrarcartatres" class="col-3">
-  
-        
-    <div class="row">
-      <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
-  
-  
-        <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-        <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-  
-      </div>
-   
-  
-  
+</div>
+<div *ngIf="mostrarcartatres" class="col-3">
+
+
+  <div class="row">
+    <div class="col-3 text-center" *ngFor="let carta of numeroCartas; let i = index;" id="diseño-cuadricula">
+
+
+      <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
+
+    </div>
+
+
+
+</div>
+<div class="row mt-5">
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
   </div>
-  
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
   </div>
-  <div *ngIf="mostrarcartatres" class="col-3">
-  
-        
-    <div class="row">
-      <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
-  
-  
-        <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-        <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-  
-      </div>
-   
-  
-  
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
   </div>
-  
+</div>
+
+</div>
+<div *ngIf="mostrarcartatres" class="col-3">
+
+
+  <div class="row">
+    <div class="col-3 text-center" *ngFor="let carta of numeroCartas2; let i = index;" id="diseño-cuadricula">
+
+
+      <img (click)="clickBoton(i+50, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+50}}" (click)="clickBoton(i+50, carta)" class="frijol">
+
+    </div>
+
+
+
+</div>
+<div class="row mt-5">
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
   </div>
-  <div *ngIf="mostrarcartatres" class="col-3">
-  
-        
-    <div class="row">
-      <div class="col-3 text-center" *ngFor="let carta of numeroCartas3; let i = index;" id="diseño-cuadricula">
-  
-  
-        <img (click)="clickBoton(i, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
-        <img id="{{i}}" (click)="clickBoton(i, carta)" class="frijol">
-  
-      </div>
-   
-  
-  
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
   </div>
-  
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
   </div>
-  
-  
- 
-  
-      <div class="col-3 text-center ">
-        <div class="row">
-          <div class="col-6">
-            <h5>La carta es:</h5>
-            <img *ngIf="numerobajara > 0" style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
-  
-            <div class="row mt-5">
-              <div class="col-12 mt-1">
-                <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
-              </div>
-              <div class="col-12 mt-1">
-                <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
-              </div>
-              <div class="col-12 mt-1">
-                <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
-              </div>
-            </div>
-  
-            <div class="row mt-5" >
-              <div class="col-12 mt-1">
-                <button *ngIf="mostrarbtn" (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
-              </div> 
-  
-              <div class="col-12 mt-1">
-                <button *ngIf="mostrarbtnreinicar" (click)="reiniciar()" type="button" id="reset" class="btn btn-primary btn-block">Reiniciar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="row">
-              <div class="col-12">
-                <h2> Jugadores en linea: </h2>
-                <ul class="list-group">
-                  <li class="list-group-item" *ngFor="let player of playerstotal">{{player}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+</div>
+
+</div>
+<div *ngIf="mostrarcartatres" class="col-3">
+
+
+  <div class="row">
+    <div class="col-3 text-center" *ngFor="let carta of numeroCartas3; let i = index;" id="diseño-cuadricula">
+
+
+      <img (click)="clickBoton(i+200, carta)" style="width: 60%;" src="./assets/img/cartas/{{carta}}.jpg">
+      <img id="{{i+200}}" (click)="clickBoton(i+200, carta)" class="frijol">
+
+    </div>
+
+
+
+</div>
+<div class="row mt-5">
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnloteria" (click)="loteria()"  type="button" class="btn btn-danger btn-block">Loteria</button>
+  </div>
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtncentro" (click)="centro()" type="button" class="btn btn-danger btn-block">Centro</button>
+  </div>
+  <div class="col-12 mt-1">
+    <button *ngIf="mostrarbtnllenota" (click)="llena()" type="button" class="btn btn-danger btn-block">Llena</button>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<div class="col-3 text-center ">
+  <div class="row">
+    <div class="col-12">
+      <h5>La carta es:</h5>
+      <img *ngIf="numerobajara > 0" style="width: 50%;" src="./assets/img/cartas/{{numerobajara}}.jpg">
+
+      
+
+      <div class="row mt-5" >
+        <div class="col-12 mt-1">
+          <button *ngIf="mostrarbtn" (click)="empezar()" type="button" id="reset" class="btn btn-primary btn-block">Empezar</button>
         </div>
-        <div class="col-12 mt-2">
-          <div class="alert alert-dismissible alert-primary pr-5" *ngFor="let ganador of ganadores">
-            <strong> {{ ganador }} </strong>
-          </div>
+
+        <div class="col-12 mt-1">
+          <button *ngIf="mostrarbtnreinicar" (click)="reiniciar()" type="button" id="reset" class="btn btn-primary btn-block">Reiniciar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <h2> Jugadores en linea: </h2>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let player of playerstotal">{{player}}</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="col-12 mt-2">
+    <div class="alert alert-dismissible alert-primary pr-5" *ngFor="let ganador of ganadores">
+      <strong> {{ ganador }} </strong>
+    </div>
+  </div>
+</div>
+</div>
+</div>
