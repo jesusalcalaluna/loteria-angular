@@ -435,7 +435,9 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   }
 
-  llena() {
+  llena(ind:any) {
+    if(ind==1){
+      
     this.espacio1 = document.getElementById('0');
     this.espacio2 = document.getElementById('1');
     this.espacio3 = document.getElementById('2');
@@ -500,7 +502,142 @@ export class PartidaComponent implements OnInit, OnDestroy {
         timer: 1500
       });
     }
+    if (ind==2){
+      this.espacio1 = document.getElementById('50');
+      this.espacio2 = document.getElementById('51');
+      this.espacio3 = document.getElementById('52');
+      this.espacio4 = document.getElementById('53');
+      this.espacio5 = document.getElementById('54');
+      this.espacio6 = document.getElementById('55');
+      this.espacio7 = document.getElementById('56');
+      this.espacio8 = document.getElementById('57');
+      this.espacio9 = document.getElementById('58');
+      this.espacio10 = document.getElementById('59');
+      this.espacio11 = document.getElementById('60');
+      this.espacio12 = document.getElementById('61');
+      this.espacio13 = document.getElementById('62');
+      this.espacio14 = document.getElementById('63');
+      this.espacio15 = document.getElementById('64');
+      this.espacio16 = document.getElementById('65');
+  
+      if (this.espacio1.getAttribute('src') && this.espacio2.getAttribute('src') &&
+          this.espacio3.getAttribute('src') && this.espacio4.getAttribute('src') &&
+          this.espacio5.getAttribute('src') && this.espacio6.getAttribute('src') &&
+          this.espacio7.getAttribute('src') && this.espacio8.getAttribute('src') &&
+          this.espacio9.getAttribute('src') && this.espacio10.getAttribute('src') &&
+          this.espacio11.getAttribute('src') && this.espacio12.getAttribute('src') &&
+          this.espacio13.getAttribute('src') && this.espacio14.getAttribute('src') &&
+          this.espacio15.getAttribute('src') && this.espacio16.getAttribute('src')){
+  
+  
+        var encuentra = false;
+        for (let i = 0; i < this.barajaspasadas.length; i++) {
+          encuentra = false;
+          const bajarapasada = this.barajaspasadas[i];
+          for (let j = 0; j < this.cartasSeleccionadas.length; j++) {
+            const selecbaraja = this.cartasSeleccionadas[i];
+            if (selecbaraja != bajarapasada){
+              encuentra = true;
+              Swal.fire({
+                icon: 'error',
+                title: 'mentiroso',
+                showConfirmButton: false,
+                timer: 1500
+              });
+              break;
+            }
+          }
+          if (encuentra){
+            break;
+          }
+        }
+        Swal.fire({
+          icon: 'success',
+          title: 'Has ganado la llena',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.socketloteria.ganollena(localStorage.getItem('sala'),localStorage.getItem('player'));
+        this.mostrarbtnllenota = false;
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'mentiroso',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+  }
+  if(ind==3){
+    
+    this.espacio1 = document.getElementById('200');
+    this.espacio2 = document.getElementById('201');
+    this.espacio3 = document.getElementById('202');
+    this.espacio4 = document.getElementById('203');
+    this.espacio5 = document.getElementById('204');
+    this.espacio6 = document.getElementById('205');
+    this.espacio7 = document.getElementById('206');
+    this.espacio8 = document.getElementById('207');
+    this.espacio9 = document.getElementById('208');
+    this.espacio10 = document.getElementById('209');
+    this.espacio11 = document.getElementById('210');
+    this.espacio12 = document.getElementById('211');
+    this.espacio13 = document.getElementById('212');
+    this.espacio14 = document.getElementById('213');
+    this.espacio15 = document.getElementById('214');
+    this.espacio16 = document.getElementById('215');
 
+    if (this.espacio1.getAttribute('src') && this.espacio2.getAttribute('src') &&
+        this.espacio3.getAttribute('src') && this.espacio4.getAttribute('src') &&
+        this.espacio5.getAttribute('src') && this.espacio6.getAttribute('src') &&
+        this.espacio7.getAttribute('src') && this.espacio8.getAttribute('src') &&
+        this.espacio9.getAttribute('src') && this.espacio10.getAttribute('src') &&
+        this.espacio11.getAttribute('src') && this.espacio12.getAttribute('src') &&
+        this.espacio13.getAttribute('src') && this.espacio14.getAttribute('src') &&
+        this.espacio15.getAttribute('src') && this.espacio16.getAttribute('src')){
+
+
+      var encuentra = false;
+      for (let i = 0; i < this.barajaspasadas.length; i++) {
+        encuentra = false;
+        const bajarapasada = this.barajaspasadas[i];
+        for (let j = 0; j < this.cartasSeleccionadas.length; j++) {
+          const selecbaraja = this.cartasSeleccionadas[i];
+          if (selecbaraja != bajarapasada){
+            encuentra = true;
+            Swal.fire({
+              icon: 'error',
+              title: 'mentiroso',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            break;
+          }
+        }
+        if (encuentra){
+          break;
+        }
+      }
+      Swal.fire({
+        icon: 'success',
+        title: 'Has ganado la llena',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.socketloteria.ganollena(localStorage.getItem('sala'),localStorage.getItem('player'));
+      this.mostrarbtnllenota = false;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'mentiroso',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+
+  }
+
+    }
 
 
 
